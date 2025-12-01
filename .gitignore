@@ -1,0 +1,6 @@
+.vs
+build
+*.vcxproj
+*.vcxproj.filters
+*.txt
+*.sln
