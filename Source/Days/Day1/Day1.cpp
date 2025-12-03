@@ -7,8 +7,7 @@
 namespace aoc
 {
 	Day1::Day1() :
-        m_part1{},
-        m_part2{}
+        Day(1)
 	{
 		ReadFileIntoVector(m_fileData, m_path.append("Day1\\day1.txt"));
 	}
@@ -49,8 +48,5 @@ namespace aoc
 
             pos += dist;
         }
-
-        spdlog::info("-----DAY1-----");
-        spdlog::info("Part1: {}    Part2: {}", m_part1, m_part2);
     }
 }

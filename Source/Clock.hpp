@@ -7,15 +7,23 @@ namespace aoc
     class Clock
     {
     public:
-        static void Start();
-        static void Stop();
-        [[nodiscard]] static long long Elapsed();
+        Clock()
+        {
+            m_start = std::chrono::steady_clock::now();
+        }
+
+        inline void Stop()
+        {
+            m_stop = std::chrono::steady_clock::now();
+        }
+
+        inline [[nodiscard]] long long Elapsed() const
+        {
+            return std::chrono::duration_cast<std::chrono::milliseconds>(m_stop - m_start).count();
+        }
 
     private:
-        Clock() = delete;
-        ~Clock() = delete;
-
-        static std::chrono::steady_clock::time_point m_start;
-        static std::chrono::steady_clock::time_point m_stop;
+        std::chrono::steady_clock::time_point m_start;
+        std::chrono::steady_clock::time_point m_stop;
     };
 }

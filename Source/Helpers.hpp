@@ -19,7 +19,7 @@ namespace aoc
 		return c - '0';
 	}
 
-	inline [[nodsicard]] int64_t StrToLongInt(const std::string& str)
+	inline [[nodiscard]] int64_t StrToLongInt(const std::string& str)
 	{
 		return std::stoll(str);
 	}

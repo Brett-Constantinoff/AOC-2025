@@ -10,8 +10,7 @@
 namespace aoc
 {
 	Day2::Day2() :
-		m_part1{},
-		m_part2{}
+        Day(2)
 	{
 		ReadFileIntoVector(m_fileData, m_path.append("Day2\\day2.txt"), ',');
 	}
@@ -33,9 +32,6 @@ namespace aoc
 
 			FindRepeatingDigits(start, stop);
 		}
-
-		spdlog::info("-----DAY2-----");
-		spdlog::info("Part1: {}    Part2: {}", m_part1, m_part2);
 	}
 
     void Day2::FindRepeatingDigits(const int64_t start, const int64_t stop)

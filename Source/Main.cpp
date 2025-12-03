@@ -7,18 +7,18 @@ using namespace aoc;
 
 int main()
 {
-	Clock::Start();
+	Clock c;
 	{
 		Day1 day1;
-		day1.Solve();
+		day1.Complete();
 
 		Day2 day2;
-		day2.Solve();
+		day2.Complete();
 
 		Day3 day3;
-		day3.Solve();
+		day3.Complete();
 	}
-	Clock::Stop();
+	c.Stop();
 
-	spdlog::info("AOC 2025 Solve Time - {} seconds", Clock::Elapsed() / 1000.0f);
+	spdlog::info("AOC 2025 Solve Time - {} seconds", c.Elapsed() / 1000.0f);
 }

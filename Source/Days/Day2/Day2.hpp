@@ -7,7 +7,7 @@
 
 namespace aoc
 {
-	class Day2 : public Day
+	class Day2 : public Day<int64_t, int64_t>
 	{
 	public:
 		Day2();
@@ -17,9 +17,5 @@ namespace aoc
 
 	private:
 		void FindRepeatingDigits(const int64_t start, const int64_t stop);
-
-	private:
-		int64_t m_part1;
-		int64_t m_part2;
 	};
 }

@@ -7,16 +7,12 @@
 
 namespace aoc
 {
-	class Day1 : public Day
+	class Day1 : public Day<int32_t, int32_t>
 	{
 	public:
 		Day1();
 		~Day1();
 
 		void Solve() override;
-
-	private:
-		int32_t m_part1;
-		int32_t m_part2;
 	};
 }

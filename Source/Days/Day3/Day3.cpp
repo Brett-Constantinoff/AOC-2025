@@ -7,8 +7,7 @@
 namespace aoc
 {
 	Day3::Day3() :
-		m_part1{},
-		m_part2{}
+		Day(3)
 	{
 		ReadFileIntoVector(m_fileData, m_path.append("Day3\\day3.txt"));
 	}
@@ -25,9 +24,6 @@ namespace aoc
 			m_part1 += StrToInt(FindLargestSubSequence(s, 2));
 			m_part2 += StrToLongInt(FindLargestSubSequence(s, 12));
 		}
-
-		spdlog::info("-----DAY3-----");
-		spdlog::info("Part1: {}    Part2: {}", m_part1, m_part2);
 	}
 
 	std::string Day3::FindLargestSubSequence(const std::string& str, int32_t len)
