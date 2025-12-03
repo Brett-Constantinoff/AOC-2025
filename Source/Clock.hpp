@@ -17,7 +17,7 @@ namespace aoc
             m_stop = std::chrono::steady_clock::now();
         }
 
-        inline [[nodiscard]] long long Elapsed() const
+        inline [[nodiscard]] int64_t Elapsed() const
         {
             return std::chrono::duration_cast<std::chrono::milliseconds>(m_stop - m_start).count();
         }
