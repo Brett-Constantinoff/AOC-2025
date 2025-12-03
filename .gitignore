@@ -4,3 +4,4 @@ build
 *.vcxproj.filters
 *.txt
 *.sln
+*.vcxproj.user

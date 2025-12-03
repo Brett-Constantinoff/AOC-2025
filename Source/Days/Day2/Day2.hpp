@@ -16,10 +16,10 @@ namespace aoc
 		void Solve() override;
 
 	private:
-		void FindRepeatingDigits(const int32_t start, const int32_t stop);
+		void FindRepeatingDigits(const int64_t start, const int64_t stop);
 
 	private:
-		int32_t m_part1;
-		int32_t m_part2;
+		int64_t m_part1;
+		int64_t m_part2;
 	};
 }

@@ -28,8 +28,8 @@ namespace aoc
 		{
 			size_t pos = s.find('-');
 
-			int32_t start = StrToInt(s.substr(0, pos));
-			int32_t stop = StrToInt(s.substr(pos + 1));
+			int64_t start = StrToLongInt(s.substr(0, pos));
+			int64_t stop = StrToLongInt(s.substr(pos + 1));
 
 			FindRepeatingDigits(start, stop);
 		}
@@ -38,26 +38,68 @@ namespace aoc
 		spdlog::info("Part1: {}    Part2: {}", m_part1, m_part2);
 	}
 
-	void Day2::FindRepeatingDigits(const int32_t start, const int32_t stop)
-	{
-		for (int32_t i = start; i <= stop; ++i)
-		{
-			std::unordered_set<char> d = {};
+    void Day2::FindRepeatingDigits(const int64_t start, const int64_t stop)
+    {
+        for (int64_t i = start; i <= stop; ++i)
+        {
+            int64_t n = i;
+            int32_t digits = 0;
+            int64_t tmp = n;
+            while (tmp > 0)
+            {
+                tmp /= 10;
+                digits++;
+            }
 
-			std::string s = IntToStr(i);
-			const int32_t l = s.length();
+            if (digits % 2 == 0)
+            {
+                int32_t half = digits / 2;
+                int64_t divisor = 1;
+                for (int32_t j = 0; j < half; j++)
+                {
+                    divisor *= 10;
+                }
 
-			// add each digit to the set, if the length of the set
-			// is half the length of the id, its a duplicate
-			for (const auto& c : s)
-			{
-				d.insert(c);
-			}
+                int64_t left = n / divisor;
+                int64_t right = n % divisor;
 
-			if (d.size() == (0.5f * l))
-			{
-				m_part1 += i;
-			}
-		}
-	}
+                if (left == right)
+                {
+                    m_part1 += n;
+                }
+            }
+
+            for (int32_t k = 1; k <= digits / 2; k++)
+            {
+                if (digits % k != 0)
+                {
+                    continue;
+                }
+
+                int32_t repeatCount = digits / k;
+
+                int64_t pow10k = 1;
+                for (int32_t p = 0; p < digits - k; p++)
+                {
+                    pow10k *= 10;
+                }
+
+                int64_t pattern = n / pow10k;
+
+                int64_t rebuilt = 0;
+                int64_t multiplier = 1;
+                for (int32_t j = 0; j < repeatCount; j++)
+                {
+                    rebuilt = rebuilt * static_cast<int64_t>(std::pow(10, k)) + pattern;
+                }
+
+                if (rebuilt == n)
+                {
+                    m_part2 += n;
+                    break;
+                }
+            }
+        }
+    }
+
 }

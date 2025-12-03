@@ -29,6 +29,11 @@ namespace aoc
 		return std::stoi(str);
 	}
 
+	inline [[nodiscard]] std::string LongIntToStr(const int64_t n)
+	{
+		return std::to_string(n);
+	}
+
 	inline [[nodiscard]] std::string IntToStr(const int32_t n)
 	{
 		return std::to_string(n);
