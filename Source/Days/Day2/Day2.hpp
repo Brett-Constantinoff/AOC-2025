@@ -2,18 +2,21 @@
 
 #include <Days/Day.hpp>
 
-#include <string>
 #include <vector>
+#include <string>
 
 namespace aoc
 {
-	class Day1 : public Day
+	class Day2 : public Day
 	{
 	public:
-		Day1();
-		~Day1();
+		Day2();
+		~Day2();
 
 		void Solve() override;
+
+	private:
+		void FindRepeatingDigits(const int32_t start, const int32_t stop);
 
 	private:
 		int32_t m_part1;

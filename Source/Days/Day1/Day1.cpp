@@ -7,18 +7,14 @@
 namespace aoc
 {
 	Day1::Day1() :
-        m_fileData{}, 
         m_part1{},
         m_part2{}
 	{
-		std::string path = GetRootPath();
-
-		ReadFileIntoVector(m_fileData, path.append("\\Source\\Days\\Day1\\day1.txt"));
+		ReadFileIntoVector(m_fileData, m_path.append("Day1\\day1.txt"));
 	}
 
 	Day1::~Day1()
 	{
-		m_fileData.clear();
 	}
 
     void Day1::Solve()
@@ -54,7 +50,7 @@ namespace aoc
             pos += dist;
         }
 
-        spdlog::info("Part1 - {}", m_part1);
-        spdlog::info("Part2 - {}", m_part2);
+        spdlog::info("-----DAY1-----");
+        spdlog::info("Part1: {}    Part2: {}", m_part1, m_part2);
     }
 }

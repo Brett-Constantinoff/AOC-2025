@@ -1,3 +1,5 @@
 #pragma once
 
-#include "Day1/Day1.hpp"
+#include <Days/Day1/Day1.hpp>
+#include <Days/Day2/Day2.hpp>
+#include <Days/Day3/Day3.hpp>
