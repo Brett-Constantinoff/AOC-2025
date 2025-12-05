@@ -6,15 +6,34 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <windows.h>
+#include <psapi.h>
 
 namespace aoc 
 {
-	inline [[nodiscard]] const char IntToChar(const int32_t n)
+	inline [[nodiscard]] std::int64_t GetMemoryUsedBytes()
+	{
+		PROCESS_MEMORY_COUNTERS pmc{};
+		GetProcessMemoryInfo(GetCurrentProcess(), &pmc, sizeof(pmc));
+		return pmc.WorkingSetSize;
+	}
+
+	template<typename T>
+	void FastVecCopy(
+		std::vector<T>& result,
+		const std::vector<T>& original,
+		std::size_t size)
+	{
+		result.resize(size);
+		std::copy(original.begin(), original.end(), result.begin());
+	}
+
+	inline constexpr [[nodiscard]] const char IntToChar(const int32_t n)
 	{
 		return '0' + n;
 	}
 
-	inline [[nodiscard]] int32_t CharToInt(const char c)
+	inline constexpr [[nodiscard]] int32_t CharToInt(const char c)
 	{
 		return c - '0';
 	}

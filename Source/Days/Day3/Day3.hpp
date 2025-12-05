@@ -8,6 +8,7 @@ namespace aoc
 		Day3();
 		~Day3();
 
+	private:
 		void Solve() override;
 
 	private:

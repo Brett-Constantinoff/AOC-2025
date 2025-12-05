@@ -1,24 +1,29 @@
 #include <Pch.hpp>
 
-#include <Clock.hpp>
+#include <Helpers.hpp>
 #include <Days/Days.hpp>
 
 using namespace aoc;
 
 int main()
 {
-	Clock c;
 	{
+		int64_t beforeMem = GetMemoryUsedBytes();
+
 		Day1 day1;
-		day1.Complete();
-
 		Day2 day2;
-		day2.Complete();
-
 		Day3 day3;
-		day3.Complete();
-	}
-	c.Stop();
+		Day4 day4;
 
-	spdlog::info("AOC 2025 Solve Time - {} seconds", c.Elapsed() / 1000.0f);
+		int64_t solveTime =
+			day1.Complete() +
+			day2.Complete() +
+			day3.Complete() +
+			day4.Complete();
+
+		int64_t afterMem = GetMemoryUsedBytes();
+
+		spdlog::info("AOC 2025 Solve Time - {} seconds", solveTime / 1000.0f);
+		spdlog::info("AOC 2025 Memory Usage - {} KB", (afterMem - beforeMem) / 1024);
+	}
 }

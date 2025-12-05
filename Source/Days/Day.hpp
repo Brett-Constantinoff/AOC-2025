@@ -23,7 +23,7 @@ namespace aoc
 
         virtual ~Day() = default;
 
-        inline void Complete()
+        constexpr inline int64_t Complete()
         {
             Clock c;
             {
@@ -33,18 +33,20 @@ namespace aoc
             m_solveTime = c.Elapsed();
 
             Display();
+
+            return m_solveTime;
         }
 
     protected:
         virtual void Solve() = 0;
 
     private:
-        inline void Display()
+        constexpr inline void Display()
         {
             spdlog::info("----- DAY {} -----", m_day);
             spdlog::info("{:<12} : {}", "Part 1", m_part1);
             spdlog::info("{:<12} : {}", "Part 2", m_part2);
-            spdlog::info("{:<12} : {} s", "Solve Time", m_solveTime / 1000.0f);
+            spdlog::info("{:<12} : {} s\n", "Solve Time", m_solveTime / 1000.0f);
         }
 
     protected:

@@ -13,6 +13,7 @@ namespace aoc
 		Day1();
 		~Day1();
 
+	private:
 		void Solve() override;
 	};
 }
