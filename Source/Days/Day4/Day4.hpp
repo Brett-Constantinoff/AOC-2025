@@ -8,28 +8,28 @@ namespace aoc
 	{
 		struct Positions
 		{
-			char left = '0';
-			char right = '0';
-			char topLeft = '0';
-			char topRight = '0';
-			char top = '0';
-			char bottom = '0';
-			char bottomLeft = '0';
-			char bottomRight = '0';
+			char Left = '0';
+			char Right = '0';
+			char TopLeft = '0';
+			char TopRight = '0';
+			char Top = '0';
+			char Bottom = '0';
+			char BottomLeft = '0';
+			char BottomRight = '0';
 
 			constexpr inline [[nodiscard]] const int32_t GetRollCount() const
 			{
 				const char roll = '@';
 
 				int32_t count = 0;
-				count += left == roll ? 1 : 0;
-				count += right == roll ? 1 : 0;
-				count += topLeft == roll ? 1 : 0;
-				count += topRight == roll ? 1 : 0;
-				count += top == roll ? 1 : 0;
-				count += bottom == roll ? 1 : 0;
-				count += bottomLeft == roll ? 1 : 0;
-				count += bottomRight == roll ? 1 : 0;
+				count += Left == roll ? 1 : 0;
+				count += Right == roll ? 1 : 0;
+				count += TopLeft == roll ? 1 : 0;
+				count += TopRight == roll ? 1 : 0;
+				count += Top == roll ? 1 : 0;
+				count += Bottom == roll ? 1 : 0;
+				count += BottomLeft == roll ? 1 : 0;
+				count += BottomRight == roll ? 1 : 0;
 
 				return count;
 			}

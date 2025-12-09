@@ -14,12 +14,16 @@ int main()
 		Day2 day2;
 		Day3 day3;
 		Day4 day4;
+		Day5 day5;
+		Day6 day6;
 
 		int64_t solveTime =
 			day1.Complete() +
 			day2.Complete() +
 			day3.Complete() +
-			day4.Complete();
+			day4.Complete() +
+			day5.Complete() +
+			day6.Complete();
 
 		int64_t afterMem = GetMemoryUsedBytes();
 

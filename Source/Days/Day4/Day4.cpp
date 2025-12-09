@@ -78,41 +78,41 @@ namespace aoc
 		const bool isLeft = j == 0;
 		const bool isRight = j == rowSize - 1;
 
-		positions.left = isLeft
+		positions.Left = isLeft
 			? '0'
 			: row[j - 1];
 
-		positions.topLeft = isTop
+		positions.TopLeft = isTop
 			? '0'
 			: isLeft
 			? '0'
 			: m_fileData[i - 1][j - 1];
 
-		positions.right = isRight
+		positions.Right = isRight
 			? '0'
 			: row[j + 1];
 
-		positions.topRight = isTop
+		positions.TopRight = isTop
 			? '0'
 			: isRight
 			? '0'
 			: m_fileData[i - 1][j + 1];
 
-		positions.top = isTop
+		positions.Top = isTop
 			? '0'
 			: m_fileData[i - 1][j];
 
-		positions.bottom = isBottom
+		positions.Bottom = isBottom
 			? '0'
 			: m_fileData[i + 1][j];
 
-		positions.bottomLeft = isBottom
+		positions.BottomLeft = isBottom
 			? '0'
 			: isLeft
 			? '0'
 			: m_fileData[i + 1][j - 1];
 
-		positions.bottomRight = isBottom
+		positions.BottomRight = isBottom
 			? '0'
 			: isRight
 			? '0'
